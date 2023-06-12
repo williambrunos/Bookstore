@@ -2,11 +2,8 @@ from flask import Flask, jsonify, request
 from commons.http_status import HTTP_STATUS_SUCCESS, HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE
 
 app = Flask(__name__)
-
 books = []
 stock = []
-FAILURE_CODE = 404
-SUCCESS_CODE = 201
 
 @app.route('/books', methods=['GET'])
 def list_books():

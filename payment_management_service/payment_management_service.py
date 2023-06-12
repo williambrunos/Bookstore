@@ -2,7 +2,6 @@ from flask import Flask, jsonify, request
 from commons.http_status import HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE, HTTP_STATUS_SUCCESS
 
 app = Flask(__name__)
-
 payments = []
 
 @app.route('/payments', methods='POST')
