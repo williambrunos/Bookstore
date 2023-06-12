@@ -19,4 +19,4 @@ def create_user():
     return jsonify(user), HTTP_STATUS_SUCCESS
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=5000)

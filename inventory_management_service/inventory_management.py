@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from ..commons.http_status import HTTP_STATUS_SUCCESS, HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE
+from commons.http_status import HTTP_STATUS_SUCCESS, HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE
 
 app = Flask(__name__)
 
@@ -34,3 +34,7 @@ def delete_book(ISBN):
         return jsonify({'message': 'book deleted'})
     else:
         return jsonify({'message': 'book not found'}), HTTP_STATUS_FAILURE
+    
+
+if __name__ == '__main__':
+    app.run(5003)
