@@ -1,4 +1,4 @@
-from flask import Flask, jsonfy, request
+from flask import Flask, jsonify, request
 from ..commons.http_status import HTTP_STATUS_SUCCESS, HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE
 
 app = Flask(__name__)
@@ -10,7 +10,7 @@ SUCCESS_CODE = 201
 
 @app.route('/books', methods=['GET'])
 def list_books():
-    return jsonfy(books)
+    return jsonify(books)
 
 @app.route('/books', methods=['POST'])
 def create_book():
@@ -23,7 +23,7 @@ def create_book():
     }
     books.append(book)
     
-    return jsonfy(book), HTTP_STATUS_CREATED
+    return jsonify(book), HTTP_STATUS_CREATED
 
 @app.route('/books/<string:ISBN>', methods=['DELETE'])
 def delete_book(ISBN):
@@ -31,6 +31,6 @@ def delete_book(ISBN):
     
     if book:
         books.remove(book)
-        return jsonfy({'message': 'book deleted'})
+        return jsonify({'message': 'book deleted'})
     else:
-        return jsonfy({'message': 'book not found'}), HTTP_STATUS_FAILURE
+        return jsonify({'message': 'book not found'}), HTTP_STATUS_FAILURE

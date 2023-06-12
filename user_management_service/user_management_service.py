@@ -1,4 +1,4 @@
-from flask import Flask, jsonfy, request
+from flask import Flask, jsonify, request
 from ..commons.http_status import HTTP_STATUS_SUCCESS, HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE
 
 app = Flask(__name__)
@@ -16,7 +16,7 @@ def create_user():
     }
     users.append(user)
     
-    return jsonfy(user), HTTP_STATUS_SUCCESS
+    return jsonify(user), HTTP_STATUS_SUCCESS
 
 if __name__ == '__main__':
     app.run()

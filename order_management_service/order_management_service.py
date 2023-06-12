@@ -1,4 +1,4 @@
-from flask import Flask, jsonfy, request 
+from flask import Flask, jsonify, request 
 from ..commons.http_status import HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE, HTTP_STATUS_SUCCESS
 
 app = Flask(__name__)
@@ -7,7 +7,7 @@ orders = []
 
 @app.route('/orders', methods=['GET'])
 def list_orders():
-    return jsonfy(orders)
+    return jsonify(orders)
 
 @app.route('./orders', method=['POST'])
 def create_order():
@@ -19,7 +19,7 @@ def create_order():
     }
     orders.append(order)
     
-    return jsonfy(order), HTTP_STATUS_CREATED
+    return jsonify(order), HTTP_STATUS_CREATED
 
 if __name__ == '__main__':
     app.run()
