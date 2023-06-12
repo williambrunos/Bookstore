@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from ..commons.http_status import HTTP_STATUS_SUCCESS, HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE
+from commons.http_status import HTTP_STATUS_SUCCESS, HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE
 
 app = Flask(__name__)
 users = []
