@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from commons.http_status import HTTP_STATUS_SUCCESS, HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE
+from commons.api_config import HTTP_STATUS_SUCCESS, HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE, INVENTORY_MANAGEMENT_PORT
 
 app = Flask(__name__)
 books = []
@@ -34,4 +34,4 @@ def delete_book(ISBN):
     
 
 if __name__ == '__main__':
-    app.run(5003)
+    app.run(INVENTORY_MANAGEMENT_PORT)

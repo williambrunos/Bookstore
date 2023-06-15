@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request 
-from commons.http_status import HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE, HTTP_STATUS_SUCCESS
+from commons.api_config import HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE, HTTP_STATUS_SUCCESS, ORDER_MANAGEMENT_PORT
 
 app = Flask(__name__)
 orders = []
@@ -22,5 +22,5 @@ def create_order():
     return jsonify(order), HTTP_STATUS_CREATED
 
 if __name__ == '__main__':
-    app.run(port=5002)
+    app.run(port=ORDER_MANAGEMENT_PORT)
     

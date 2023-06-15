@@ -8,15 +8,16 @@ This repository is intended to store all the artifacts of the micro services nee
 
 Building the *commons* dependencies, responsible for storing the HTTP status codes:
 
+*On the root folder*
 ```BASH
 python setup.py sdist
 ```
 
-Installing the *commons* dependencies:
+Installing all dependencies:
 
+*On the root folder*
 ```BASH
-cd dist
-pip install commons-0.1.tar.gz
+pip install -r requirements.txt
 ```
 
 ## How to run it

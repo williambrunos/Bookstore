@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from commons.http_status import HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE, HTTP_STATUS_SUCCESS
+from commons.api_config import HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE, HTTP_STATUS_SUCCESS, PAYMENT_MANAGEMENT_PORT
 
 app = Flask(__name__)
 payments = []
@@ -18,5 +18,5 @@ def process_payment():
 
 
 if __name__ == '__main__':
-    app.run(port=5001)
+    app.run(port=PAYMENT_MANAGEMENT_PORT)
     

@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from commons.http_status import HTTP_STATUS_SUCCESS, HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE
+from commons.api_config import HTTP_STATUS_SUCCESS, HTTP_STATUS_CREATED, HTTP_STATUS_FAILURE, USER_MANAGEMENT_PORT
 
 app = Flask(__name__)
 users = []
@@ -19,4 +19,4 @@ def create_user():
     return jsonify(user), HTTP_STATUS_SUCCESS
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=USER_MANAGEMENT_PORT)
